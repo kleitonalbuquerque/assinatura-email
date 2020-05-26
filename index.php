@@ -20,11 +20,11 @@
 </style>
  <script language="JavaScript">
   function mascara(t, mask){
- var i = t.value.length;
- var saida = mask.substring(1,0);
- var texto = mask.substring(i)
- if (texto.substring(0,1) != saida){
- t.value += texto.substring(0,1);
+  var i = t.value.length;
+  var saida = mask.substring(1,0);
+  var texto = mask.substring(i)
+  if (texto.substring(0,1) != saida){
+  t.value += texto.substring(0,1);
  }
  }
 
@@ -33,12 +33,24 @@
          objeto.value = '(' + objeto.value;
 
         if(objeto.value.length == 3)
-          objeto.value = objeto.value + ') ';
+          objeto.value = objeto.value + ')';
 
-        if(objeto.value.length == 9)
+        if(objeto.value.length == 8)
          objeto.value = objeto.value + '-';
 		   
     }
+
+  function mascaraCelular(objeto){
+      if(objeto.value.length == 0)
+        objeto.value = '(' + objeto.value;
+
+      if(objeto.value.length == 3)
+        objeto.value = objeto.value + ')';
+
+      if(objeto.value.length == 9)
+        objeto.value = objeto.value + '-';
+      
+  }
 
  </script>
 <script language="javascript">
@@ -50,23 +62,29 @@ function valida_dados (valida)
         return false;
     }
 
-    if (valida.empresa.value=="")
+    /* if (valida.empresa.value=="")
     {
         alert ("Selecione a Empresa.");
         return false;
-    }
+    } */
 
     if (valida.tel.value=="")
     {
-        alert ("Digite seu Telefone.");
+        alert ("Digite seu telefone.");
         return false;
     }
 
-    if (valida.local.value=="")
+    if (valida.cel.value=="")
+    {
+        alert ("Digite seu celular.");
+        return false;
+    }
+
+    /* if (valida.local.value=="")
     {
         alert ("Selecione sua Localidade.");
         return false;
-    }
+    } */
     
 return true;
 }
@@ -79,7 +97,7 @@ return true;
     <td width="18" rowspan="2" background="imagens/sombra-esquerda.png"><div align="left"></div></td>
     <td width="1005" bgcolor="#FFFFFF">
       
-      <div align="left">
+    <div align="left">
     <img src="imagens/top.png" width="1200" height="201" border="0" usemap="#Map" />      </div></td>
     <td width="18" rowspan="2" background="imagens/sombra-direita.png"></td>
   </tr>
@@ -101,16 +119,13 @@ return true;
                               <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                                   <input type="text" class="form-control" placeholder="Nome" name="nome" />
                               </div>
-                              <br />
-                              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-wrench"></span></span>
+                              <!-- <br /> -->
+                              <!-- <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-wrench"></span></span>
                                   <input type="text" class="form-control" placeholder="Cargo" name="cargo" />
-                              </div>
-                              <br />
-                              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                  <input type="email" class="form-control" placeholder="Seu e-mail" />
-                              </div>
-                              <br />
-                              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
+                              </div> 
+                              <br /> -->
+                              <!-- <br /> -->
+                              <!-- <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
                                   <select class="form-control" placeholder="Empresa" name="empresa" />
                                   <option value="">Selecione a empresa...</option>
                                   <option value="Administrativo">Administrativo</option>
@@ -120,53 +135,70 @@ return true;
                                   <option value="Tecnologia da Informação">Tecnologia da Informação</option>
 
                                   </select>
-                              </div>
+                              </div> -->
                               <br />
                               <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
-                                  <input type="text" class="form-control" placeholder="Telefone - apenas números com DDD" name="tel" onkeypress="mascaraTelefone(this,'## ####-####')"  maxlength="14"/>
+                                  <input type="text" class="form-control" placeholder="Telefone - apenas números com DDD" name="tel" onkeypress="mascaraTelefone(this,'## ####-####')"  maxlength="13"/>
                               </div>
                               <br />
                               <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
-                                  <input type="text" class="form-control" placeholder="Celular - apenas números sem DDD" name="cel" onkeypress="mascara(this,'#####-####')" maxlength="10"/>
+                                  <input type="text" class="form-control" placeholder="Celular - apenas números com DDD" name="cel" onkeypress="mascaraCelular(this,'## #####-####')" maxlength="14"/>
                               </div>
                               <br />
-                             <div class="input-group">
+                              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                  <input type="email" class="form-control" name="email" placeholder="Seu e-mail" />
+                              </div>
+                              <!-- Cidades -->
+                             <!-- <div class="input-group">
                               <label><input type="radio" class="form-control col-xs-offset-0 col-xs-10" placeholder="local" name="local" value="Rua Aaaaaaaaaaa, 1234 - 1º andar - CEP: 00000-000<br>Bairro - São Paulo/SP"/>SÃO PAULO</label><font color=#ffffff> .</font> 
                               <label><input type="radio" class="form-control col-xs-offset-0 col-xs-10" placeholder="local" name="local" value="Rua Bbbbbbbbbbb, 1234 - 1º andar - CEP: 00000-000<br>Bairro - Rio de Janeiro/RJ"/>RIO DE JANEIRO</label><font color=#ffffff> .</font> 
                               <label><input type="radio" class="form-control col-xs-offset-0 col-xs-10" placeholder="local" name="local" value="Rua Ccccccccccc, 1234 - 1º andar - CEP: 00000-000<br>Bairro - Curitia/PR"/>CURITIBA</label><font color=#ffffff> .</font> 
                               <label><input type="radio" class="form-control col-xs-offset-0 col-xs-10" placeholder="local" name="local" value="Rua Ddddddddddd, 1234 - 1º andar - CEP: 00000-000<br>Bairro - Manaus/AM"/>MANAUS</label><font color=#ffffff> .</font> 
                               <label><input type="radio" class="form-control col-xs-offset-0 col-xs-10" placeholder="local" name="local" value="Rua Edddddddddd, 1234 - 1º andar - CEP: 00000-000<br>Bairro - Fortaleza/CE"/>FORTALEZA</label> 
-                              </div>
-                              <br />
+                              </div>-->
+                              <br /> 
 
                              <div class="col-xs-offset-4 col-xs-10">
                                 <button type="submit" class="btn btn-primary" name="Enviar">Gerar Assinatura</button>
                               </div>
                             </div>
                             <div align="center">
-                              <?php    
+<?php    
 if(isset($_POST['Enviar'])){ 
 $nome = $_POST['nome']; 
-$empresa = $_POST['empresa']; 
+// $empresa = $_POST['empresa']; 
 $tel = $_POST['tel']; 
 $cel = $_POST['cel']; 
-$local = $_POST['local'];
+$email = $_POST['email'];
+// $local = $_POST['local'];
 echo "
 <style type='text/css'>
-<!--
 table {
     border-style: solid;
     border-left-color: #ffffff;
     border-right-color: #ffffff;
     border-top-color: #ffffff;
     border-bottom-color: #ffffff;
+    margin-top: 20px;
 }
--->
+
+.box {
+  background-color: #535353;
+  color: #FFF;
+  padding: 5px;
+  width: 300px !important;
+  height: 50px;
+  border-radius: 0px 30px 30px 0px;
+  font-size: 16px;
+}
+
 </style>
+
 <table width='600' height='98' border='0' align='left' cellpadding='0' cellspacing='0'>
   <tr>
-    <td width='187'><img src='logotipo.png' width='178' height='98'></td>
-    <td width='422'><font face=Calibri color=#575756><b>$nome</b> | $empresa<br>$tel / $cel<br>$local</td>
+  <td width='422'><font face=Calibri color=#575756><b><div class='box'>$nome<br><span style='font-size:12px;'>Marketing</span></div></b>  $empresa<br><span style='margin-bottom:10px;' class='glyphicon glyphicon-earphone'> $tel </span> <br> <span style='margin-bottom:10px;' class='glyphicon glyphicon-phone'> $cel </span> <br> <span style='margin-bottom:10px;' class='glyphicon glyphicon-envelope'> $email </span> </span> <br> <span style='margin-bottom:5px;' class='glyphicon glyphicon-globe'> www.fibrafort.com.br </span></td>
+  <td width='187'><img src='logotipo.png' width='178' height='98'></td>
+  <td width='187'><img src='logotipo.png' width='178' height='98'></td>
   </tr>
   <tr>
     <!-- <td colspan='2'><font face=Calibri color=#575756 size=2><em>Atuamos desde 1984, focados soluções de alta tecnologia.<br> -->
