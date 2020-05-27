@@ -62,11 +62,11 @@ function valida_dados (valida)
         return false;
     }
 
-    /* if (valida.empresa.value=="")
+    if (valida.setor.value=="")
     {
-        alert ("Selecione a Empresa.");
+        alert ("Selecione o setor.");
         return false;
-    } */
+    }
 
     if (valida.tel.value=="")
     {
@@ -90,10 +90,13 @@ return true;
 }
 </script>
  
-<body bgcolor="#f9f9f9">
+<body bgcolor="#EEEEEE">
 </head>
+<div class="container page-header">
+  <center><h1>Gerador de Assinaturas de E-mail</h1></center>
+</div>
 <table width="*" border="0" cellpadding="0" cellspacing="0" align="center">
-  <tr>
+  <!-- <tr>
     <td width="18" rowspan="2" background="imagens/sombra-esquerda.png"><div align="left"></div></td>
     <td width="1005" bgcolor="#FFFFFF">
       
@@ -101,7 +104,7 @@ return true;
     <img src="imagens/top.png" width="1200" height="201" border="0" usemap="#Map" />      </div></td>
     <td width="18" rowspan="2" background="imagens/sombra-direita.png"></td>
   </tr>
-  <tr>
+  <tr> -->
     <td bgcolor="#FFFFFF">
       
       <div align="left">
@@ -124,18 +127,21 @@ return true;
                                   <input type="text" class="form-control" placeholder="Cargo" name="cargo" />
                               </div> 
                               <br /> -->
-                              <!-- <br /> -->
-                              <!-- <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
-                                  <select class="form-control" placeholder="Empresa" name="empresa" />
-                                  <option value="">Selecione a empresa...</option>
+                              <br />
+                              <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
+                                  <select class="form-control" placeholder="Setor" name="setor" />
+                                  <option value="">Selecione o setor...</option>
+                                  <option value="Presidencia">Presidencia</option>
+                                  <option value="Diretoria">Diretoria</option>
                                   <option value="Administrativo">Administrativo</option>
                                   <option value="Comunicação">Comunicação</option>
                                   <option value="Comercial">Comercial</option>
                                   <option value="Recursos Humanos">Recursos Humanos</option>
+                                  <option value="Marketing">Marketing</option>
                                   <option value="Tecnologia da Informação">Tecnologia da Informação</option>
 
                                   </select>
-                              </div> -->
+                              </div>
                               <br />
                               <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
                                   <input type="text" class="form-control" placeholder="Telefone - apenas números com DDD" name="tel" onkeypress="mascaraTelefone(this,'## ####-####')"  maxlength="13"/>
@@ -158,28 +164,37 @@ return true;
                               </div>-->
                               <br /> 
 
-                             <div class="col-xs-offset-4 col-xs-10">
-                                <button type="submit" class="btn btn-primary" name="Enviar">Gerar Assinatura</button>
-                              </div>
+                             <div class="">
+                              <button type="submit" style="margin-bottom: 20px;" class="btn btn-primary float-left" name="Enviar">Gerar Assinatura</button>
+                            </div>
+                            <p><small>*Após gerar a assinatura basta selecionar todo o conteúdo gerado e copiar e colar sua assinatura no seu e-mail de preferência.</small></p>
                             </div>
                             <div align="center">
 <?php    
 if(isset($_POST['Enviar'])){ 
 $nome = $_POST['nome']; 
-// $empresa = $_POST['empresa']; 
+$setor = $_POST['setor']; 
 $tel = $_POST['tel']; 
 $cel = $_POST['cel']; 
 $email = $_POST['email'];
 // $local = $_POST['local'];
 echo "
 <style type='text/css'>
+body{
+  background-color: #EEEEEE;
+}
+
 table {
-    border-style: solid;
-    border-left-color: #ffffff;
-    border-right-color: #ffffff;
-    border-top-color: #ffffff;
-    border-bottom-color: #ffffff;
-    margin-top: 20px;
+  border-style: solid;
+  border-left-color: #ffffff;
+  border-right-color: #ffffff;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+  margin-top: 20px;
+}
+
+.logo {
+  margin-top: 60px;
 }
 
 .box {
@@ -190,15 +205,32 @@ table {
   height: 50px;
   border-radius: 0px 30px 30px 0px;
   font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.icons {
+  color: #535353 !important;
+  width: 15px;
+  margin-bottom: 5px;
 }
 
 </style>
 
-<table width='600' height='98' border='0' align='left' cellpadding='0' cellspacing='0'>
+<table width='600' height='98' border='0' align='center' cellpadding='0' cellspacing='0'>
   <tr>
-  <td width='422'><font face=Calibri color=#575756><b><div class='box'>$nome<br><span style='font-size:12px;'>Marketing</span></div></b>  $empresa<br><span style='margin-bottom:10px;' class='glyphicon glyphicon-earphone'> $tel </span> <br> <span style='margin-bottom:10px;' class='glyphicon glyphicon-phone'> $cel </span> <br> <span style='margin-bottom:10px;' class='glyphicon glyphicon-envelope'> $email </span> </span> <br> <span style='margin-bottom:5px;' class='glyphicon glyphicon-globe'> www.fibrafort.com.br </span></td>
-  <td width='187'><img src='logotipo.png' width='178' height='98'></td>
-  <td width='187'><img src='logotipo.png' width='178' height='98'></td>
+  <td width='600'><font face=Calibri color=#575756><b><div class='box'>$nome<br><span style='font-size:12px;'>$setor</span></div></b><br><span style='margin-bottom:10px;'><img class='icons' src='imagens/phone.png' alt='phone'> $tel </span> <br> <span style='margin-bottom:10px;'><img class='icons' src='imagens/mobile.png' alt='mobile'> $cel </span> <br> <span style='margin-bottom:10px;'><img class='icons' src='imagens/envelop.png' alt='envelop'> $email </span> </span> <br> <span style='margin-bottom:5px;'><img class='icons' src='imagens/sphere.png' alt='sphere'> www.fibrafort.com.br </span></td>
+  <td width='187'><img class='logo' src='imagens/logo.png' width='auto' height='98'></td>
+  
   </tr>
   <tr>
     <!-- <td colspan='2'><font face=Calibri color=#575756 size=2><em>Atuamos desde 1984, focados soluções de alta tecnologia.<br> -->
@@ -229,12 +261,12 @@ table {
                     </table></td>
                 </tr>
                 <tr>
-                  <td align="center" style="padding-left: 15px; padding-right: 15px;">
+                  <!-- <td align="center" style="padding-left: 15px; padding-right: 15px;">
                       <table height="20" width="100%" border="0" cellspacing="5" cellpadding="0" style="border-top-width: 1px; border-top-style:solid; border-top-color:#4c556b">
                         <tr>
                           <td width="82%" align="center">&nbsp;</td>
                           <td width="18%" align="center" class="texto_comum"><div align="right"><span class="style14">por: </span>KLM Tech</div></td>
-                        </tr>
+                        </tr> -->
                       </table>
                       <br />
 </td>
