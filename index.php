@@ -131,15 +131,33 @@ return true;
                               <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
                                   <select class="form-control" placeholder="Setor" name="setor" />
                                   <option value="">Selecione o setor...</option>
-                                  <option value="Presidencia">Presidencia</option>
                                   <option value="Diretoria">Diretoria</option>
-                                  <option value="Administrativo">Administrativo</option>
-                                  <option value="Comunicação">Comunicação</option>
+                                  <option value="Diretoria de Operações">Diretoria de Operações</option>
+                                  <option value="Administrativo - Financeiro">Administrativo - Financeiro</option>
+                                  <option value="Almoxarifado">Almoxarifado</option>
                                   <option value="Comercial">Comercial</option>
-                                  <option value="Recursos Humanos">Recursos Humanos</option>
-                                  <option value="Marketing">Marketing</option>
-                                  <option value="Tecnologia da Informação">Tecnologia da Informação</option>
-
+                                  <option value="Comercial - Marketing">Comercial - Marketing</option>
+                                  <option value="Compósitos">Compósitos</option>
+                                  <option value="Contabilidade - Faturamento">Contabilidade - Faturamento</option>
+                                  <option value="Controladoria">Controladoria</option>
+                                  <option value="DHO">DHO</option>
+                                  <option value="Exportação">Exportação</option>
+                                  <option value="Faturamento">Faturamento</option>
+                                  <option value="Financeiro">Financeiro</option>
+                                  <option value="Garantia de Qualidade">Garantia de Qualidade</option>
+                                  <option value="Gerente Industrial">Gerente Industrial</option>
+                                  <option value="Manutenção">Manutenção</option>
+                                  <option value="Manutenção Predial">Manutenção Predial</option>
+                                  <option value="P&D">P&D</option>
+                                  <option value="PCP">PCP</option>
+                                  <option value="Portaria">Portaria</option>
+                                  <option value="Produção">Produção</option>
+                                  <option value="Qualidade">Qualidade</option>
+                                  <option value="Recebimento/Qualidade">Recebimento/Qualidade</option>
+                                  <option value="RH/Financeiro">RH/Financeiro</option>
+                                  <option value="Suprimentos">Suprimentos</option>
+                                  <option value="TI">TI</option>
+                                  <option value="Yatchs">Yatchs</option>
                                   </select>
                               </div>
                               <br />
