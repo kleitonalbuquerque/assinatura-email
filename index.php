@@ -117,7 +117,7 @@ return true;
                     <br />
                       <div class="marcoshenrique">
                         <form action="" method="post" onSubmit="return valida_dados(this)">
-                          <div class="row">
+                          <div class="row col-xs-12">
                             <div class="col-xs-5">
                               <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                                   <input type="text" class="form-control" placeholder="Nome" name="nome" />
@@ -188,6 +188,9 @@ return true;
                             <p><small>*Após gerar a assinatura basta selecionar todo o conteúdo gerado e copiar e colar sua assinatura no seu e-mail de preferência.</small></p>
                             </div>
                             <div align="center">
+                            <div class="col-xs-5">
+                            <img src="imagens/logo.png" alt="logo" srcset="">
+                            </div>
 <?php    
 if(isset($_POST['Enviar'])){ 
 $nome = $_POST['nome']; 
@@ -245,6 +248,7 @@ table {
 
 </style>
 
+<div class='container'>
 <table width='900' height='98' border='0' align='center' cellpadding='0' cellspacing='0' class='col-xs-5'>
   <tr>
   <td width='600'><font face=Calibri color=#575756><b><div class='box'>$nome<br><span style='font-size:12px;'>$setor</span></div></b><br><span style='margin-bottom:10px;'><img class='icons' src='imagens/phone.png' alt='phone'> $tel </span> <br> <span style='margin-bottom:10px;'><img class='icons' src='imagens/mobile.png' alt='mobile'> $cel </span> <br> <span style='margin-bottom:10px;'><img class='icons' src='imagens/envelop.png' alt='envelop'> $email </span> </span> <br> <span style='margin-bottom:5px;'><img class='icons' src='imagens/sphere.png' alt='sphere'> www.fibrafort.com.br </span></td>
@@ -255,7 +259,9 @@ table {
     <!-- <td colspan='2'><font face=Calibri color=#575756 size=2><em>Atuamos desde 1984, focados soluções de alta tecnologia.<br> -->
 </em></td>
   </tr>
-</table></font>
+</table>
+</div>
+</font>
 ";
 } 
 ?>
