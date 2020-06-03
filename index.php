@@ -245,7 +245,7 @@ table {
 
 </style>
 
-<table width='900' height='98' border='0' align='center' cellpadding='0' cellspacing='0'>
+<table width='900' height='98' border='0' align='center' cellpadding='0' cellspacing='0' class='col-xs-5'>
   <tr>
   <td width='600'><font face=Calibri color=#575756><b><div class='box'>$nome<br><span style='font-size:12px;'>$setor</span></div></b><br><span style='margin-bottom:10px;'><img class='icons' src='imagens/phone.png' alt='phone'> $tel </span> <br> <span style='margin-bottom:10px;'><img class='icons' src='imagens/mobile.png' alt='mobile'> $cel </span> <br> <span style='margin-bottom:10px;'><img class='icons' src='imagens/envelop.png' alt='envelop'> $email </span> </span> <br> <span style='margin-bottom:5px;'><img class='icons' src='imagens/sphere.png' alt='sphere'> www.fibrafort.com.br </span></td>
   <td width='187'><img class='logo' src='imagens/logo.png' width='500' height='98'></td>
