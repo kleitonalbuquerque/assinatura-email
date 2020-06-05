@@ -142,6 +142,7 @@ return true;
                                   <option value="Controladoria">Controladoria</option>
                                   <option value="DHO">DHO</option>
                                   <option value="Exportação">Exportação</option>
+                                  <option value="Engenharia Industrial">Engenharia Industrial</option>
                                   <option value="Faturamento">Faturamento</option>
                                   <option value="Financeiro">Financeiro</option>
                                   <option value="Garantia de Qualidade">Garantia de Qualidade</option>
